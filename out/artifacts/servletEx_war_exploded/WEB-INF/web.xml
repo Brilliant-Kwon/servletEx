@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <display-name>Apache-Axis</display-name>
+    <display-name>HelloJSP</display-name>
     <servlet>
         <display-name>Apache-Axis Servlet</display-name>
         <servlet-name>AxisServlet</servlet-name>
@@ -44,6 +44,16 @@
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/servlet/AdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <!--servlet-name 서블릿 식별자-->
+        <servlet-name>HelloServlet1</servlet-name>
+        <!--servlet-class 서블릿 클래스-->
+        <servlet-class>Fab25.HelloServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet1</servlet-name>
+        <url-pattern>/hs</url-pattern>
     </servlet-mapping>
     <mime-mapping>
         <extension>wsdl</extension>
