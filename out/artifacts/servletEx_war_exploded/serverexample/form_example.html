@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 태그 예제</title>
+</head>
+<body>
+<h1>폼 태그 예제 </h1>
+<!-- name, action, method-->
+<form>
+    <!--일반 텍스트-->
+    <label for="general_text">일반 텍스트</label>
+    <input type="text" name="general_text" placeholder="여기에 텍스트를 입력">
+    <br>
+    <!--암호화 텍스트-->
+    <label for="password_text">암호화 텍스트</label>
+    <input type="password" name="password_text"><br>
+    <!--체크박스-->
+    <input type="checkbox" name="pet" value="dog">개
+    <input type="checkbox" name="pet" value="cat">고양이
+    <input type="checkbox" name="pet" value="cow">소<br>
+    <!--라디오-->
+    <input type="radio" name="fruit" value="apple">사과
+    <input type="radio" name="fruit" value="grape">포도
+    <input type="radio" name="fruit" value="strawberry">딸기<br>
+    <!--TextArea-->
+    <textarea name="content" rows="5" cols="80"></textarea>
+    <br>
+    <!--select-->
+    <select name="telecom">
+        <option value="SKT">SKT</option>
+        <option value="KT">KT</option>
+        <option value="LG">LG</option>
+    </select>
+    <!--폼 전송 및 초기화-->
+    <input type="submit" value="전송"/>
+    <input type="reset" value="초기화"/>
+</form>
+</body>
+</html>
