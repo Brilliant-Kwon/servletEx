@@ -45,16 +45,62 @@
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/servlet/AdminServlet</url-pattern>
     </servlet-mapping>
+
+    <!--컨텍스트 파라미터-->
+    <context-param>
+        <param-name>appName</param-name>
+        <param-value>HelloWorld</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbUser</param-name>
+        <param-value>bituser</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbPass</param-name>
+        <param-value>bituser</param-value>
+    </context-param>
+
+    <!--필터 등록-->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>Fab26.Filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <!--servlet-name 서블릿 식별자-->
         <servlet-name>HelloServlet1</servlet-name>
         <!--servlet-class 서블릿 클래스-->
         <servlet-class>Fab25.HelloServlet1</servlet-class>
+        <!--서블릿 초기화 파라미터-->
+        <init-param>
+            <param-name>servletName</param-name>
+            <param-value>HelloServlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>description</param-name>
+            <param-value>나의 첫 번째 서블릿입니다.</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet1</servlet-name>
         <url-pattern>/hs</url-pattern>
     </servlet-mapping>
+    <!--Error Page 설정-->
+    <!--특정 Exception에 대한 에러 페이지-->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error_pages/error.jsp</location>
+    </error-page>
+    <!--특정 상태 코드에 대한 에러 페이지-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_pages/error_404.jsp</location>
+    </error-page>
+
     <mime-mapping>
         <extension>wsdl</extension>
         <mime-type>text/xml</mime-type>
