@@ -1,0 +1,42 @@
+-- emaillist 테이블
+CREATE TABLE emaillist (
+    no           NUMBER PRIMARY KEY,
+    last_name    VARCHAR2(20),
+    first_name   VARCHAR2(20),
+    email        VARCHAR2(128),
+    created_at   DATE DEFAULT sysdate
+);
+
+drop SEQUENCE seq_emaillist_pk;
+
+-- 시퀀스 생성
+create sequence seq_emaillist_pk
+start with 4
+increment by 1;
+
+--insert
+insert into emaillist
+values(seq_emaillist_pk.nextval,
+    '권', '찬근', 'itkwon12@naver.com', sysdate);
+    
+commit;
+
+desc emaillist;
+
+select * from emaillist;
+
+SELECT
+    *
+FROM
+    user_sequences;
+    
+desc seq_emaillist_pk;
+    
+SELECT 
+        last_number
+FROM 
+        USER_SEQUENCES 
+WHERE 
+        SEQUENCE_NAME = 'seq_emaillist_pk';
+        
+update emaillist set no=3 where first_name='현석';        

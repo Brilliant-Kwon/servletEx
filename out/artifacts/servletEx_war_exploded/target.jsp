@@ -27,8 +27,36 @@
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String headerName = headerNames.nextElement();
+    %>
+    <li><%= headerName%> : <%= request.getHeader(headerName)%>
+    </li>
+    <%
         }
 
+    %>
+</ul>
+
+<h3>Parameters</h3>
+<ul>
+    <%
+        Enumeration<String> paramNames = request.getParameterNames();
+        while (paramNames.hasMoreElements()) {
+            String paramName = paramNames.nextElement();
+    %>
+    <li><%= paramName%> : <%
+        if (paramName.equals("pet")) {
+            //체크박스 : 여러개의 값이 설정될 수 있다.
+            String[] pets = request.getParameterValues("pet");
+    %><%=String.join(",", pets)%><%
+    } else {
+    %>
+        <%= request.getParameter(paramName)%>
+        <%
+            }
+        %>
+    </li>
+    <%
+        }
     %>
 </ul>
 </body>

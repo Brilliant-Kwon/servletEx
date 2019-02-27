@@ -19,7 +19,7 @@
     //request라는 이름으로 미리 만들어 전달.
     //Response객체 -> response
     String name = request.getParameter("name");
-    if (name == null) name = "Anonymous";
+    if (name == null) name = "익명";
 %>
 <p>Welcome, <%=name%></p>
 </body>
